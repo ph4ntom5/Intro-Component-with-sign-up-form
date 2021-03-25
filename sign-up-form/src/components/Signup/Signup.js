@@ -24,11 +24,11 @@ export const Signup = () => {
   };
   return (
     <div className="box">
-      <div className="Top-Button">
+      <button className="Top-Button">
         <p className="Top-Button-Text">
           <b>Try it free 7 days</b> then $20/mo. thereafter
         </p>
-      </div>
+      </button>
       <div className="Form">
         {submitting && <div>Submitting Form...</div>}
         <form onSubmit={handleSubmit}>
@@ -53,10 +53,12 @@ export const Signup = () => {
                 placeholder="Password"
               ></input>
             </label>
-            <button type="submit">CLAIM YOUR FREE TRIAL</button>
+            <button className="Claim-Button" type="submit">
+              CLAIM YOUR FREE TRIAL
+            </button>
             <p className="terms">
               By clicking this button, you are agreeing to our{" "}
-              <span>Terms and Services</span>
+              <button href="#">Terms and Services</button>
             </p>
           </fieldset>
         </form>

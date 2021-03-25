@@ -1,3 +1,16 @@
 .App {
   text-align: center;
 }
+
+@media only screen and (min-width: 1000px) {
+  .App {
+    margin: 14rem 0 0 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  .Box {
+    width: 90%;
+  }
+}

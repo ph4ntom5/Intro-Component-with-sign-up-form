@@ -11,7 +11,85 @@ fieldset {
   border: none;
 }
 
+.Form {
+  background-color: white;
+  margin: 2rem 2rem 5rem 2rem;
+  border-radius: 1.2rem;
+  box-shadow: 0rem 0.8rem #d96767;
+}
+
 .Form label {
   display: block;
-  padding: 0.5rem;
+  padding: 0.1rem;
+}
+
+.Form label input {
+  width: 90%;
+  height: 3rem;
+  margin: 2rem 0 0 0;
+  padding: 2.5rem 0 0 0;
+  border-radius: 0.6rem;
+  border: solid 0.2rem #e7e8e7;
+}
+
+.Form label input::placeholder {
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  padding: 0 0 0 2rem;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.Top-Button {
+  border: none;
+  box-shadow: 0rem 0.8rem #d96767;
+  margin: 0 2rem 1rem 2rem;
+  padding: 0.5rem 4rem 0.5rem 4rem;
+  border-radius: 1rem;
+  background-color: var(--Blue);
+}
+
+.Top-Button-Text {
+  font-weight: 400;
+  padding: 0 3rem 0 3rem;
+  font-size: 1.6rem;
+  margin: 1rem;
+}
+
+.Claim-Button {
+  background-color: var(--Green);
+  border: none;
+  border-radius: 0.6rem;
+  color: white;
+  font-weight: 600;
+  font-size: 1.6rem;
+  margin: 1.5rem 0 0 0;
+  padding: 2rem 4.3rem 2rem 4.3rem;
+}
+
+.terms {
+  color: hsl(246, 25%, 77%);
+  line-height: 2rem;
+  font-size: 1.2rem;
+  margin: 0 auto;
+  padding: 1.5rem 0 1.5rem 0;
+}
+
+.terms button {
+  color: var(--Red);
+  font-weight: 800;
+  text-decoration: none;
+  background-color: unset;
+  border: none;
+}
+
+@media only screen and (min-width: 1000px) {
+  .box {
+    width: 40%;
+  }
+  p.terms {
+    text-align: center;
+    font-size: 1rem;
+  }
 }
