@@ -34,11 +34,7 @@ export const Signup = () => {
         <form onSubmit={handleSubmit}>
           <fieldset>
             <label>
-              <input
-                name="name"
-                placeholder="First Name"
-                onChange={handleChange}
-              />
+              <input name="name" placeholder="First Name" />
             </label>
             <label>
               <input name="name" placeholder="Last Name" />

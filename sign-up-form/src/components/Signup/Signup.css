@@ -25,18 +25,25 @@ fieldset {
 
 .Form label input {
   width: 90%;
-  height: 3rem;
+  height: 1rem;
   margin: 2rem 0 0 0;
-  padding: 2.5rem 0 0 0;
+  padding: 2.5rem 0 2rem 2rem;
   border-radius: 0.6rem;
   border: solid 0.2rem #e7e8e7;
+  color: var(--Dark-Blue);
+  font-size: 1.6rem;
+}
+
+.Form label input:focus {
+  border: 1px solid;
+  border-color: var(--Red);
 }
 
 .Form label input::placeholder {
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  padding: 0 0 0 2rem;
+  top: 20%;
+  -ms-transform: translateY(-20%);
+  transform: translateY(-20%);
+  padding: 0 0 0 1rem;
   font-weight: 600;
   font-size: 1.5rem;
 }
