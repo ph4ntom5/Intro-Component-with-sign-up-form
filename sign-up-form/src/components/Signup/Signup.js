@@ -50,7 +50,7 @@ export const Signup = () => {
               ></input>
             </label>
             <button className="Claim-Button" type="submit">
-              CLAIM YOUR FREE TRIALS
+              CLAIM YOUR FREE TRIAL
             </button>
             <p className="terms">
               By clicking this button, you are agreeing to our{" "}
