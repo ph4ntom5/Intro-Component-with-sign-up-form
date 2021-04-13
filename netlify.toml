@@ -1,6 +1,6 @@
 [build]
     command = "npm run build" 
-    publish = "" 
+    publish = "./index" 
 
 [[redirects]]
     from = "/sign-up-form/src/index.html" 
