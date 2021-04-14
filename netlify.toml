@@ -1,8 +1,10 @@
+
 [build]
     command = "npm run build" 
-    publish = "" 
+    publish = "/sign-up-form/build/" 
 
 [[redirects]]
-    from = "/users/tomsta/documents/github/intro-component-with-sign-up-form/sign-up-form/public/" 
+    from = "/*" 
     to = "/index.html" 
     status = 200 
+
