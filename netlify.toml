@@ -3,6 +3,6 @@
     publish = "" 
 
 [[redirects]]
-    from = "../../../src/" 
+    from = "/users/tomsta/documents/github/intro-component-with-sign-up-form/sign-up-form/public/" 
     to = "/index.html" 
     status = 200 
