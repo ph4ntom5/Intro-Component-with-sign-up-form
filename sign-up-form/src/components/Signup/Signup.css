@@ -24,6 +24,15 @@ fieldset {
   display: block;
   padding: 0.1rem;
 }
+.Error-Wrapper {
+  display: flex;
+}
+.Form span.error {
+  margin-top: 1rem;
+  padding-left: 1rem;
+  color: var(--Red);
+  font-size: 1.4rem;
+}
 
 .Form label input {
   width: 90%;

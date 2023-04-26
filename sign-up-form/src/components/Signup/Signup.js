@@ -1,26 +1,69 @@
-import React, { useReducer, useState } from "react";
+import React, { useState } from "react";
 import "./Signup.css";
 
-const formReducer = (state, event) => {
-  return {
-    ...state,
-    [event.name]: event.value,
-  };
-};
-
 export const Signup = () => {
-  const [setFormData] = useReducer(formReducer, {});
-  const [submitting, setSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+  });
+
+  const [errors, setErrors] = useState({});
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    setSubmitting(true);
-    setTimeout(() => {
-      setSubmitting(false);
-    }, 2000);
+    if (validateForm()) {
+      console.log("Form submitted successfully", formData);
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        password: "",
+      });
+    } else {
+      console.log("Form submission failed");
+    }
   };
 
-  const handleChange = (e) => {
-    setFormData({ name: e.target.name, value: e.target.value });
+  // Form Validation
+
+  const validateForm = () => {
+    let errors = {};
+    let isValid = true;
+
+    if (!formData.firstName.trim()) {
+      errors.firstName = "First name is required";
+      isValid = false;
+    }
+    if (!formData.lastName.trim()) {
+      errors.lastName = "Last name is required";
+      isValid = false;
+    }
+
+    if (!formData.email.trim()) {
+      errors.email = "Email is required";
+      isValid = false;
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      errors.email = "Email address is invalid";
+      isValid = false;
+    }
+
+    if (!formData.password.trim()) {
+      errors.password = "Password is required";
+      isValid = false;
+    } else if (formData.password.length < 6) {
+      errors.password = "Password must be at least 6 characters long";
+      isValid = false;
+    }
+
+    setErrors(errors);
+    return isValid;
+  };
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData({ ...formData, [name]: value });
   };
   return (
     <div className="box">
@@ -30,30 +73,65 @@ export const Signup = () => {
         </p>
       </button>
       <div className="Form">
-        {submitting && <div>Submitting Form...</div>}
         <form onSubmit={handleSubmit}>
           <fieldset>
             <label>
-              <input name="name" placeholder="First Name" />
+              <input
+                name="firstName"
+                placeholder="First Name"
+                value={formData.firstName}
+                onChange={handleChange}
+                required
+              />
+              <div className="Error-Wrapper">
+                {errors.firstName && (
+                  <span className="error">{errors.firstName}</span>
+                )}
+              </div>
             </label>
             <label>
-              <input name="name" placeholder="Last Name" />
+              <input
+                name="lastName"
+                placeholder="Last Name"
+                value={formData.lastName}
+                onChange={handleChange}
+                required
+              />
+              <div className="Error-Wrapper">
+                {errors.lastName && (
+                  <span className="error">{errors.lastName}</span>
+                )}
+              </div>
             </label>
             <label>
-              <input name="email" placeholder="Email Address" />
+              <input
+                name="email"
+                placeholder="Email Address"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
+              <div className="Error-Wrapper">
+                {errors.email && <span className="error">{errors.email}</span>}
+              </div>
             </label>
             <label>
               <input
                 name="password"
                 type="password"
                 placeholder="Password"
-              ></input>
+                value={formData.password}
+                onChange={handleChange}
+                required
+              />
+              <div className="Error-Wrapper">
+                {" "}
+                {errors.password && (
+                  <span className="error">{errors.password}</span>
+                )}
+              </div>
             </label>
-            <button
-              onChange={handleChange}
-              className="Claim-Button"
-              type="submit"
-            >
+            <button className="Claim-Button" type="submit">
               CLAIM YOUR FREE TRIAL
             </button>
             <p className="terms">
