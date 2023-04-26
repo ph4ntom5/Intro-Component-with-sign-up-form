@@ -19,8 +19,8 @@ export const Signup = () => {
     }, 2000);
   };
 
-  const handleChange = (event) => {
-    setFormData({ name: event.target.name, value: event.target.value });
+  const handleChange = (e) => {
+    setFormData({ name: e.target.name, value: e.target.value });
   };
   return (
     <div className="box">
@@ -49,7 +49,11 @@ export const Signup = () => {
                 placeholder="Password"
               ></input>
             </label>
-            <button className="Claim-Button" type="submit">
+            <button
+              onChange={handleChange}
+              className="Claim-Button"
+              type="submit"
+            >
               CLAIM YOUR FREE TRIAL
             </button>
             <p className="terms">

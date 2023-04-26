@@ -1,6 +1,8 @@
 :root {
   --Red: hsl(0, 100%, 74%);
+  --HoverRed: hsl(0, 80%, 64%);
   --Green: hsl(154, 59%, 51%);
+  --HoverGreen: hsl(154, 62%, 45%);
   --Blue: hsl(248, 32%, 49%);
   --Dark-Blue: hsl(249, 10%, 26%);
   --Grayish-Blue: hsl(246, 25%, 77%);
@@ -73,6 +75,12 @@ fieldset {
   font-size: 1.6rem;
   margin: 1.5rem 0 0 0;
   padding: 2rem 4.3rem 2rem 4.3rem;
+  cursor: pointer;
+  transition-duration: 0.5s;
+}
+
+.Claim-Button:hover {
+  background-color: var(--HoverGreen);
 }
 
 .terms {
@@ -89,9 +97,18 @@ fieldset {
   text-decoration: none;
   background-color: unset;
   border: none;
+  cursor: pointer;
+  transition-duration: 0.5s;
+}
+
+.terms button:hover {
+  color: var(--HoverRed);
 }
 
 @media only screen and (min-width: 1000px) {
+  .Top-Button {
+    padding: 0.5rem 3rem 0.5rem 3rem;
+  }
   .box {
     width: 40%;
   }
