@@ -7,7 +7,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 62.5%;
-  background-image: url("/Users/tomsta/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Intro-Component-with-sign-up-form/sign-up-form/src/images/bg-intro-mobile.png");
+  /*background-image: url("/Users/tomsta/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/Intro-Component-with-sign-up-form/sign-up-form/src/images/bg-intro-mobile.png");*/
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
