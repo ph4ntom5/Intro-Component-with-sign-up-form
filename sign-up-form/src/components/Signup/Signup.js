@@ -16,7 +16,7 @@ export const Signup = () => {
     event.preventDefault();
     if (validateForm()) {
       try {
-        // Post form data to Supabase database
+        // Post form data to Supabase database.
         const { data, error } = await supabase
           .from("Form_Data")
           .insert([formData]);
