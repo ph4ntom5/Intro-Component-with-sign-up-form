@@ -25,7 +25,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./images/desktop-design.jpg)
+![desktop-design](https://github.com/ph4ntom5/Intro-Component-with-sign-up-form/assets/27483300/9ca385ae-1478-495a-aec2-8668e789fdcb)
 
 Desktop layout screenshot.
 
@@ -38,10 +38,11 @@ Desktop layout screenshot.
 
 - HTML5 markup
 - CSS3 custom properties
-- JavaScript
-- React
 - Flexbox
 - Mobile-first workflow
+- JavaScript
+- React
+- Supabase
 
 ## Author
 
