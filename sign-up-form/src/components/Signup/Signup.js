@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Signup.css";
+import supabase from "../../config/supabaseClient";
 
 export const Signup = () => {
   const [formData, setFormData] = useState({
@@ -11,16 +12,27 @@ export const Signup = () => {
 
   const [errors, setErrors] = useState({});
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     if (validateForm()) {
-      console.log("Form submitted successfully", formData);
-      setFormData({
-        firstName: "",
-        lastName: "",
-        email: "",
-        password: "",
-      });
+      try {
+        // Post form data to Supabase database
+        const { data, error } = await supabase
+          .from("Form_Data")
+          .insert([formData]);
+        if (error) {
+          throw new Error(error.message);
+        }
+        console.log("Form data submitted successfully:", data);
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          password: "",
+        });
+      } catch (error) {
+        console.error("Error submitting form data:", error);
+      }
     } else {
       console.log("Form submission failed");
     }
